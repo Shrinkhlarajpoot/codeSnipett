@@ -465,7 +465,7 @@
  <link rel="stylesheet" href="https://madeui.netlify.app/components/Cards/Cards.css">
 
  <button class="btn my-style">CUSTOMIZE</button> 
- <--Custom class styling -->
+<!-- custom designs -->
  <style>
     .my-style{
          color:black;
@@ -480,9 +480,73 @@
     <h6>h6. MadeUI Heading</h6>
 
 @import url('https://fonts.googleapis.com/css2family=Bree+Serif&family=Montserrat:ital,wght@0,400;0,500;0,900;1,600;1,900&family=Roboto+Slab&display=swap');
+
+
+@import url("https://madeui.netlify.app/components/Modal/Modal.css");
+<link rel="stylesheet" href="https://madeui.netlify.app/components/Modal/Modal.css">
           
              
-    
+<div class="container">
+    <div class="modal__btn" id="modal__btn1">
+             Show Demo
+    </div>
+    </div>
+        <div class="modal" id="modal">
+           <p>This is a Model.Click on close button to close it.</p>
+            <div class="modal__close">
+                 <button class="btn" id="modal__btn2">CLOSE</button>
+                <button class="btn" id="modal__btn2">SAVE</button>
+            </div>
+        </div>  
+
+<script>
+ 
+    const btn=document.getElementById("modal__btn1");
+    const modal=document.getElementById("modal");
+    const close=document.getElementById("modal__btn2");
+    const show =()=>{
+        modal.style.display="block"
+       div.style.display="block";}
+        const hide =()=>{
+        modal.style.display="none"
+        div.style.display="none";
+        } 
+       btn.addEventListener("click",show);
+        close.addEventListener("click",hide);
+        const div = document.createElement("div");
+        div.classList.add("modal__bg");
+        modal.insertAdjacentElement("afterend",div);
+</script> 
+
+@import url("https://madeui.netlify.app/components/Slider/Slider.css");
+<link rel="stylesheet" href="https://madeui.netlify.app/components/Slider/Slider.css">
+            
+<input type="range" min="1" max="100" value="1" class="slider3">
+
+<div class="slider__cont">
+   <i class="fa fa-volume-down"></i>
+    <input type="range" min="1" max="100" value="1" class="slider1">
+ </div>
+
+ <div class="slider__cont slider__designed">
+    <input type="range" min="1" max="100" value="1" class="slider2" id="range">
+        <p>Value: <span id="value"></span></p>
+</div>
+
+<script>
+    var slider=document.getElementById("range");
+    var output=document.getElementById("value");
+     output.innerHTML=slider.value;
+     slider.oninput=function(){
+     output.innerHTML=this.value;
+     }
+    function slideHandler(){
+    let x =this.value;
+    var color= `linear-gradient(90deg,var(--secondary-color) ${x}%,white ${x}%)`;
+    slider.style.background=color;
+    }
+    slider.addEventListener("input",slideHandler);
+</script>
           
              
     
